@@ -15,8 +15,12 @@
 | pytest | 9.1.1 | tests |
 | pandas | 3.0.6 | UI tables |
 | python-dotenv | 1.2.4 | optional `.env` loading |
+| playwright (dev only) | see requirements-dev.txt | headless UI smoke test and screenshots |
 
 Python 3.12 (the brief targeted 3.11; the code uses no 3.12-only features).
+
+## Design
+- UI fonts loaded from Google Fonts (Space Grotesk, Inter, JetBrains Mono). Shift colors are the first three slots of a colorblind-validated categorical palette, always paired with a letter.
 
 ## Data
 - Fully synthetic. `data/shop_staff.json` (12 fictional staff) and `data/demo_rules.txt` were written by hand for the demo.

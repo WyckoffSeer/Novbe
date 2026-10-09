@@ -2,6 +2,8 @@
 
 Managers write shift rules the way they talk — in Azerbaijani, Russian, or both mixed, with or without diacritics. Növbə turns each sentence into a structured rule, shows it back for confirmation, and then a constraint solver (OR-Tools CP-SAT) builds the rota. An independent checker re-verifies every rule on the final rota; if the rules cannot all hold, Növbə names exactly which rules clash instead of returning a broken schedule.
 
+![Növbə rota grid](docs/screenshots/grid.png)
+
 **The LLM never writes the schedule.** It only translates text into constraints and phrases explanations of facts the code has already computed.
 
 ## Architecture
@@ -57,6 +59,24 @@ python -m eval.gen_cases && python -m eval.run_eval && python -m eval.make_testi
 ```
 
 Results: [docs/TESTING.md](docs/TESTING.md) (generated from `eval/results/`).
+
+End-to-end UI test (Playwright, headless Chromium): starts the app, reads the demo rules, builds the rota, checks for "0 rule violations", repairs an absence, checks a 390 px phone layout for horizontal overflow, and saves screenshots to `docs/screenshots/`:
+
+```bash
+pip install -r requirements-dev.txt && python -m playwright install chromium
+```
+
+```bash
+python scripts/ui_smoke.py
+```
+
+## Screens
+
+| Confirm what was understood | Rota after a sick-day repair (changed seats outlined) |
+|---|---|
+| ![confirm](docs/screenshots/2_confirm.png) | ![repair](docs/screenshots/4_repair_grid.png) |
+
+Each shift is shown by a letter (M/E/N) plus its color, so it never relies on color alone; hover any cell for person, date and shift. The grid scrolls sideways on small screens while names stay pinned.
 
 ## Supported rule types (exactly 8)
 

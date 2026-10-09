@@ -14,5 +14,6 @@ Hard rules (do not break):
 Dev:
 - venv: `.venv/Scripts/python.exe` (Python 3.12 on this machine; ortools pinned to 9.12 because 9.15 segfaults on Windows).
 - Tests: `.venv/Scripts/python.exe -m pytest -q`
-- App: `.venv/Scripts/streamlit run app.py`
+- App: `.venv/Scripts/streamlit run app.py` (presentation helpers in `novbe/ui.py`; app.py holds no scheduling logic)
+- UI e2e: `.venv/Scripts/python.exe scripts/ui_smoke.py` (Playwright; writes docs/screenshots/)
 - Env: `ANTHROPIC_API_KEY`, `NOVBE_MODEL` (default `claude-sonnet-5-5`), or a `.env` file.
