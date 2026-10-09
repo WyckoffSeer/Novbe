@@ -1,0 +1,19 @@
+{
+  "name": "Synthetic shop team (fictional people)",
+  "start_date": "2026-10-12",
+  "weeks": 4,
+  "staff": [
+    {"id": "s01", "name": "Aysel", "role": "junior"},
+    {"id": "s02", "name": "Elnur", "role": "senior"},
+    {"id": "s03", "name": "Leyla", "role": "senior"},
+    {"id": "s04", "name": "Nigar", "role": "junior"},
+    {"id": "s05", "name": "Tural", "role": "junior"},
+    {"id": "s06", "name": "Rəşad", "role": "senior"},
+    {"id": "s07", "name": "Günel", "role": "senior"},
+    {"id": "s08", "name": "Kamran", "role": "senior"},
+    {"id": "s09", "name": "Sevinc", "role": "senior"},
+    {"id": "s10", "name": "Orxan", "role": "junior"},
+    {"id": "s11", "name": "Lalə", "role": "junior"},
+    {"id": "s12", "name": "Fərid", "role": "junior"}
+  ]
+}
