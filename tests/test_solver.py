@@ -60,3 +60,28 @@ def test_fixed_vs_unavailable_core():
     res = solve(p, cs)
     assert res["status"] == "INFEASIBLE"
     assert sorted(res["core_ids"]) == ["f", "u"]
+
+
+def test_repair_changes_few_shifts_and_stays_valid():
+    from novbe.repair import repair
+
+    p = load_problem()
+    cs = demo_constraints(p)
+    res = solve(p, cs)
+    prev = res["schedule"]
+    tuesday = p.start_date + dt.timedelta(days=1)
+    sick = next(s.id for s in p.staff if prev.works(s.id, tuesday))
+    absence = Unavailable(person=sick, date_range=(tuesday, tuesday))
+    rr = repair(p, cs, prev, [absence])
+    assert rr["schedule"] is not None
+    assert rr["schedule"].works(sick, tuesday) is None
+    assert 1 <= len(rr["changed"]) <= 3, rr["changed"]
+    assert verify(p, rr["schedule"], cs + [absence]).ok
+
+
+def test_explain_number_guard():
+    from novbe.explain import conflict_template, numbers_ok
+
+    assert numbers_ok("2 rules clash", '{"n": 2}')
+    assert not numbers_ok("3 rules clash", '{"n": 2}')
+    assert "«a»" in conflict_template(["a", "b"], "az")
