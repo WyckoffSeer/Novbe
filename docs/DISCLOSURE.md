@@ -14,7 +14,7 @@
 | anthropic | 1.12.1 | LLM client |
 | pytest | 9.1.1 | tests |
 | pandas | 3.0.6 | UI tables |
-| python-dotenv | — | optional `.env` loading |
+| python-dotenv | 1.2.4 | optional `.env` loading |
 
 Python 3.12 (the brief targeted 3.11; the code uses no 3.12-only features).
 
