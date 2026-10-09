@@ -1,0 +1,145 @@
+{
+  "id": "case29",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p14",
+      "name": "Murad",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Sevinc şənbə günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p09",
+          "weekdays": [
+            5
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Hər gecə növbəsində ən azı 3 nəfər olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_staff",
+          "shift": "night",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Murad çərşənbə günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p14",
+          "weekdays": [
+            2
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Tural çərşənbə günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p07",
+          "weekdays": [
+            2
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

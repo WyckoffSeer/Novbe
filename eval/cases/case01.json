@@ -1,0 +1,97 @@
+{
+  "id": "case01",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Hər səhər növbəsində минимум 3 человек olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_staff",
+          "shift": "morning",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Fərid həftədə не больше 3 смен işləsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_shifts_week",
+          "person": "p05",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "text": "Gecə növbəsində минимум 1 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

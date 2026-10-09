@@ -1,0 +1,154 @@
+{
+  "id": "case19",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p14",
+      "name": "Fərid",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Aysel 15 октября səhər növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "fixed_assignment",
+          "person": "p11",
+          "date": "2026-10-15",
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Gecə növbəsindən sonra минимум 11 часов отдых olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "min_rest_hours",
+          "hours": 11,
+          "after_shift": "night"
+        }
+      ]
+    },
+    {
+      "text": "Aysel həftədə не больше 1 смен işləsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_shifts_week",
+          "person": "p11",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "text": "Elnur по четвергам axşam növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "unavailable",
+          "person": "p10",
+          "weekdays": [
+            3
+          ],
+          "date_range": null,
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Aysel 13 октября axşam növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "fixed_assignment",
+          "person": "p11",
+          "date": "2026-10-13",
+          "shift": "evening"
+        }
+      ]
+    }
+  ],
+  "infeasible": true,
+  "conflict_ids": [
+    "g1",
+    "g2",
+    "g3"
+  ],
+  "paraphrased": false
+}

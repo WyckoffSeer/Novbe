@@ -1,0 +1,125 @@
+{
+  "id": "case03",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Səbinə",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Лейла работает в утреннюю смену 14 октября.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "fixed_assignment",
+          "person": "p04",
+          "date": "2026-10-14",
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Айнур в отпуске с 21.10 по 22.10.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p06",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-21",
+            "2026-10-22"
+          ],
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Мурад не может работать по пятницам.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p09",
+          "weekdays": [
+            4
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

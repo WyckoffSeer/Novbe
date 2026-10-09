@@ -1,0 +1,143 @@
+{
+  "id": "case13",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Günel",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Aynur bazar ertesi gunleri seher novbesine cixa bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p06",
+          "weekdays": [
+            0
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Resad 16 oktyabrda seher novbesinde isleyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "fixed_assignment",
+          "person": "p08",
+          "date": "2026-10-16",
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Resad 15 oktyabrda gece novbesinde isleyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "fixed_assignment",
+          "person": "p08",
+          "date": "2026-10-15",
+          "shift": "night"
+        }
+      ]
+    },
+    {
+      "text": "Elnur cersenbe axsami gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "unavailable",
+          "person": "p07",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Gece novbesinden sonra en azi 11 saat istirahet olmalidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_rest_hours",
+          "hours": 11,
+          "after_shift": "night"
+        }
+      ]
+    }
+  ],
+  "infeasible": true,
+  "conflict_ids": [
+    "g1",
+    "g2",
+    "g3"
+  ],
+  "paraphrased": false
+}

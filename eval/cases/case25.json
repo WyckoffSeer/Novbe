@@ -1,0 +1,127 @@
+{
+  "id": "case25",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p12",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Nigar",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Heç kim həftədə 32 saatdan çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 32
+        }
+      ]
+    },
+    {
+      "text": "Sevinc ardıcıl 6 gündən çox işləməməlidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_consecutive_days",
+          "person": "p04",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "text": "İstənilən iki növbə arasında ən azı 12 saat istirahət olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_rest_hours",
+          "hours": 12,
+          "after_shift": null
+        }
+      ]
+    },
+    {
+      "text": "Fərid ardıcıl 4 gündən çox işləməməlidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "max_consecutive_days",
+          "person": "p01",
+          "n": 4
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

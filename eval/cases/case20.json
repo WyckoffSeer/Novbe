@@ -1,0 +1,127 @@
+{
+  "id": "case20",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Kamran",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Hec kim ardicil 4 gunden cox islemesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "text": "Aynur senbe gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p05",
+          "weekdays": [
+            5
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Elnur heftede maksimum 32 saat isleye biler.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_hours_week",
+          "person": "p01",
+          "hours": 32
+        }
+      ]
+    },
+    {
+      "text": "Her seher novbesinde en azi 1 senior olmalidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "min_role",
+          "shift": "morning",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

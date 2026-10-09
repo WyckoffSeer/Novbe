@@ -1,0 +1,130 @@
+{
+  "id": "case12",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Lalə",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Aysel",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Rəşad и Aynur eyni növbədə olmasın.",
+      "expected": "unsupported",
+      "constraints": []
+    },
+    {
+      "text": "Axşam növbəsində минимум 2 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_role",
+          "shift": "evening",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "text": "Leyla cümə günləri работать не может.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p08",
+          "weekdays": [
+            4
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Fərid по понедельникам səhər növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p05",
+          "weekdays": [
+            0
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Lalə ночные смены sevmir.",
+      "expected": "ambiguous",
+      "constraints": []
+    },
+    {
+      "text": "Leyla по четвергам səhər növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p08",
+          "weekdays": [
+            3
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

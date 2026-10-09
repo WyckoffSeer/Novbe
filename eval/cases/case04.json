@@ -1,0 +1,122 @@
+{
+  "id": "case04",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Günel",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Leyla cume axsami gunleri seher novbesine cixa bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p01",
+          "weekdays": [
+            3
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Tural heftede maksimum 32 saat isleye biler.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "p04",
+          "hours": 32
+        }
+      ]
+    },
+    {
+      "text": "Hec kim heftede 40 saatdan cox islemesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 40
+        }
+      ]
+    },
+    {
+      "text": "Her axsam novbesinde en azi 3 nefer olmalidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "min_staff",
+          "shift": "evening",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

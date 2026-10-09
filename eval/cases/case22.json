@@ -1,0 +1,104 @@
+{
+  "id": "case22",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Kamran",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "В каждой ночной смене должно быть минимум 3 человека.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_staff",
+          "shift": "night",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Нигяр не может работать по воскресеньям.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p04",
+          "weekdays": [
+            6
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Гюнель не может выходить в ночную смену по четвергам.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p06",
+          "weekdays": [
+            3
+          ],
+          "date_range": null,
+          "shift": "night"
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

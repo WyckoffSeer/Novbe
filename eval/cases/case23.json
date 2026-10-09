@@ -1,0 +1,136 @@
+{
+  "id": "case23",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p14",
+      "name": "Lalə",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Murad 20 oktyabrda gecə növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "fixed_assignment",
+          "person": "p13",
+          "date": "2026-10-20",
+          "shift": "night"
+        }
+      ]
+    },
+    {
+      "text": "Səbinə gecə növbələrini sevmir.",
+      "expected": "ambiguous",
+      "constraints": []
+    },
+    {
+      "text": "Aysel 14.10-dən 15.10-dək məzuniyyətdədir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p11",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-14",
+            "2026-10-15"
+          ],
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Heç kim həftədə 48 saatdan çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 48
+        }
+      ]
+    },
+    {
+      "text": "Aynur və Lalə eyni növbədə işləməsin.",
+      "expected": "unsupported",
+      "constraints": []
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

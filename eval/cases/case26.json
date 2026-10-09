@@ -1,0 +1,116 @@
+{
+  "id": "case26",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p12",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p13",
+      "name": "Leyla",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Sevinc ardıcıl 5 gündən çox işləməməlidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_consecutive_days",
+          "person": "p11",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "text": "Hər səhər növbəsində ən azı 1 senior olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_role",
+          "shift": "morning",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "text": "Sevinc həftədə 3 növbədən çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_shifts_week",
+          "person": "p11",
+          "n": 3
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

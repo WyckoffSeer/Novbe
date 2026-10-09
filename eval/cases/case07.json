@@ -1,0 +1,123 @@
+{
+  "id": "case07",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Lalə",
+      "role": "senior"
+    },
+    {
+      "id": "p12",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Sevinc",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "В каждой утренней смене должно быть минимум 3 человека.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_staff",
+          "shift": "morning",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Турал и Гюнель не должны работать в одной смене.",
+      "expected": "unsupported",
+      "constraints": []
+    },
+    {
+      "text": "В каждой утренней смене минимум 1 старших (senior).",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_role",
+          "shift": "morning",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "text": "В каждой ночной смене минимум 2 старших (senior).",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

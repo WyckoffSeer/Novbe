@@ -1,0 +1,135 @@
+{
+  "id": "case18",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Sevinc",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Günel cümə günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p05",
+          "weekdays": [
+            4
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Sevinc həftədə maksimum 40 saat işləyə bilər.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "max_hours_week",
+          "person": "p12",
+          "hours": 40
+        }
+      ]
+    },
+    {
+      "text": "Hər gecə növbəsində ən azı 2 senior olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "text": "Fərid cümə günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p01",
+          "weekdays": [
+            4
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": true,
+  "conflict_ids": [
+    "g1",
+    "g2",
+    "g3"
+  ],
+  "paraphrased": false
+}

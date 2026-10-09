@@ -1,0 +1,131 @@
+{
+  "id": "case05",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Murad 14 oktyabrda axşam növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "fixed_assignment",
+          "person": "p04",
+          "date": "2026-10-14",
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Elnur səhərləri işləməyi üstün tutur.",
+      "expected": "ambiguous",
+      "constraints": []
+    },
+    {
+      "text": "İstənilən iki növbə arasında ən azı 12 saat istirahət olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_rest_hours",
+          "hours": 12,
+          "after_shift": null
+        }
+      ]
+    },
+    {
+      "text": "Hər axşam növbəsində ən azı 3 nəfər olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_staff",
+          "shift": "evening",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Hər gecə növbəsində ən azı 3 nəfər olmalıdır.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "min_staff",
+          "shift": "night",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Elnur çərşənbə axşamı günləri səhər növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "unavailable",
+          "person": "p05",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

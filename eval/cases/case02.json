@@ -1,0 +1,118 @@
+{
+  "id": "case02",
+  "style": "az",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Lalə",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Heç kim ardıcıl 6 gündən çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "text": "Vüsal 20 oktyabrda səhər növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "fixed_assignment",
+          "person": "p06",
+          "date": "2026-10-20",
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Vüsal çərşənbə axşamı günləri işləyə bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p06",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": true,
+  "conflict_ids": [
+    "g1",
+    "g2"
+  ],
+  "paraphrased": false
+}

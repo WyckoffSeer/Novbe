@@ -1,0 +1,151 @@
+{
+  "id": "case27",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Lalə",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p12",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p13",
+      "name": "Orxan",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Fərid и Rəşad eyni növbədə olmasın.",
+      "expected": "unsupported",
+      "constraints": []
+    },
+    {
+      "text": "Murad по понедельникам axşam növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p05",
+          "weekdays": [
+            0
+          ],
+          "date_range": null,
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Hər kəs в неделю ən çox 5 növbə işləsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_shifts_week",
+          "person": "all",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "text": "Rəşad 13 октября gecə növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "fixed_assignment",
+          "person": "p12",
+          "date": "2026-10-13",
+          "shift": "night"
+        }
+      ]
+    },
+    {
+      "text": "Kamran 14 октября səhər növbəsində işləyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "fixed_assignment",
+          "person": "p11",
+          "date": "2026-10-14",
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Səhər növbəsində минимум 1 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "min_role",
+          "shift": "morning",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

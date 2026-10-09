@@ -1,0 +1,134 @@
+{
+  "id": "case17",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Lalə",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Sevinc",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Leyla по вторникам səhər növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p06",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Aysel максимум 4 gün ardıcıl işləyə bilər.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_consecutive_days",
+          "person": "p04",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "text": "Növbələr arasında минимум 12 saat istirahət olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_rest_hours",
+          "hours": 12,
+          "after_shift": null
+        }
+      ]
+    },
+    {
+      "text": "Günel ночные смены sevmir.",
+      "expected": "ambiguous",
+      "constraints": []
+    },
+    {
+      "text": "Никто ardıcıl 4 gündən çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "text": "Səhər növbəsində минимум 2 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "min_role",
+          "shift": "morning",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

@@ -1,0 +1,96 @@
+{
+  "id": "case09",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Vüsal",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Турал работает в вечернюю смену 12 октября.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "fixed_assignment",
+          "person": "p05",
+          "date": "2026-10-12",
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Гюнель — максимум 48 часов в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "p06",
+          "hours": 48
+        }
+      ]
+    },
+    {
+      "text": "Никто не работает больше 48 часов в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 48
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

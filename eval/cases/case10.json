@@ -1,0 +1,111 @@
+{
+  "id": "case10",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Tural",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Нигяр не может работать по пятницам.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p04",
+          "weekdays": [
+            4
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Айсель — максимум 40 часов в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "p07",
+          "hours": 40
+        }
+      ]
+    },
+    {
+      "text": "Севиндж — не больше 3 смен в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_shifts_week",
+          "person": "p01",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "text": "Никто не должен работать больше 6 дней подряд.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 6
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

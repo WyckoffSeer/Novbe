@@ -1,0 +1,112 @@
+{
+  "id": "case21",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Murad",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Gecə növbəsində минимум 2 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "text": "Növbələr arasında минимум 11 saat istirahət olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_rest_hours",
+          "hours": 11,
+          "after_shift": null
+        }
+      ]
+    },
+    {
+      "text": "Növbələr arasında минимум 16 saat istirahət olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_rest_hours",
+          "hours": 16,
+          "after_shift": null
+        }
+      ]
+    },
+    {
+      "text": "Vüsal по вторникам axşam növbəsinə çıxa bilməz.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p04",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": "evening"
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

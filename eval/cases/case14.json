@@ -1,0 +1,110 @@
+{
+  "id": "case14",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Vüsal",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Турал может работать не больше 6 дней подряд.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_consecutive_days",
+          "person": "p02",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "text": "Никто не работает больше 40 часов в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 40
+        }
+      ]
+    },
+    {
+      "text": "Между любыми сменами минимум 12 часов отдыха.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_rest_hours",
+          "hours": 12,
+          "after_shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

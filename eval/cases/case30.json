@@ -1,0 +1,141 @@
+{
+  "id": "case30",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Sevinc",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Səbinə",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Никто не должен работать больше 4 дней подряд.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "text": "Сабина — максимум 48 часов в неделю.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "p12",
+          "hours": 48
+        }
+      ]
+    },
+    {
+      "text": "В каждой ночной смене минимум 1 старших (senior).",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "text": "Орхан в отпуске с 14.10 по 15.10.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p03",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-14",
+            "2026-10-15"
+          ],
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "В каждой вечерней смене минимум 2 старших (senior).",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "min_role",
+          "shift": "evening",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

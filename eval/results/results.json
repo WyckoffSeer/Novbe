@@ -1,0 +1,360 @@
+{
+  "summary": {
+    "run_at": "2026-10-09T18:32:37",
+    "model": null,
+    "llm_used": false,
+    "n_cases": 30,
+    "n_feasible": 25,
+    "n_infeasible": 5,
+    "team_size_range": [
+      9,
+      14
+    ],
+    "paraphrased_cases": 0,
+    "solver_on_truth": {
+      "feasible_cases_solved": 25,
+      "feasible_cases_zero_violations": 25,
+      "infeasible_detected": 5,
+      "core_exact": 5,
+      "core_contains_planted": 5,
+      "median_solve_seconds": 0.128,
+      "max_solve_seconds": 20.059
+    },
+    "eval_wall_seconds": 25.0
+  },
+  "cases": [
+    {
+      "id": "case01",
+      "style": "mixed",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.092,
+      "truth_violations": 0
+    },
+    {
+      "id": "case02",
+      "style": "az",
+      "team_size": 12,
+      "infeasible": true,
+      "paraphrased": false,
+      "truth_status": "INFEASIBLE",
+      "truth_solve_seconds": 0.105,
+      "truth_core": [
+        "g1",
+        "g2"
+      ],
+      "truth_core_has_base": false,
+      "truth_core_exact": true,
+      "truth_core_contains": true
+    },
+    {
+      "id": "case03",
+      "style": "ru",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.036,
+      "truth_violations": 0
+    },
+    {
+      "id": "case04",
+      "style": "noaz",
+      "team_size": 11,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.052,
+      "truth_violations": 0
+    },
+    {
+      "id": "case05",
+      "style": "az",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.091,
+      "truth_violations": 0
+    },
+    {
+      "id": "case06",
+      "style": "noaz",
+      "team_size": 12,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.046,
+      "truth_violations": 0
+    },
+    {
+      "id": "case07",
+      "style": "ru",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.081,
+      "truth_violations": 0
+    },
+    {
+      "id": "case08",
+      "style": "az",
+      "team_size": 11,
+      "infeasible": true,
+      "paraphrased": false,
+      "truth_status": "INFEASIBLE",
+      "truth_solve_seconds": 0.133,
+      "truth_core": [
+        "g1",
+        "g2"
+      ],
+      "truth_core_has_base": false,
+      "truth_core_exact": true,
+      "truth_core_contains": true
+    },
+    {
+      "id": "case09",
+      "style": "ru",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.031,
+      "truth_violations": 0
+    },
+    {
+      "id": "case10",
+      "style": "ru",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.039,
+      "truth_violations": 0
+    },
+    {
+      "id": "case11",
+      "style": "noaz",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.047,
+      "truth_violations": 0
+    },
+    {
+      "id": "case12",
+      "style": "mixed",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.034,
+      "truth_violations": 0
+    },
+    {
+      "id": "case13",
+      "style": "noaz",
+      "team_size": 11,
+      "infeasible": true,
+      "paraphrased": false,
+      "truth_status": "INFEASIBLE",
+      "truth_solve_seconds": 0.536,
+      "truth_core": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "truth_core_has_base": false,
+      "truth_core_exact": true,
+      "truth_core_contains": true
+    },
+    {
+      "id": "case14",
+      "style": "ru",
+      "team_size": 12,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.189,
+      "truth_violations": 0
+    },
+    {
+      "id": "case15",
+      "style": "noaz",
+      "team_size": 14,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.244,
+      "truth_violations": 0
+    },
+    {
+      "id": "case16",
+      "style": "noaz",
+      "team_size": 10,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.095,
+      "truth_violations": 0
+    },
+    {
+      "id": "case17",
+      "style": "mixed",
+      "team_size": 10,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.195,
+      "truth_violations": 0
+    },
+    {
+      "id": "case18",
+      "style": "az",
+      "team_size": 12,
+      "infeasible": true,
+      "paraphrased": false,
+      "truth_status": "INFEASIBLE",
+      "truth_solve_seconds": 0.38,
+      "truth_core": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "truth_core_has_base": false,
+      "truth_core_exact": true,
+      "truth_core_contains": true
+    },
+    {
+      "id": "case19",
+      "style": "mixed",
+      "team_size": 14,
+      "infeasible": true,
+      "paraphrased": false,
+      "truth_status": "INFEASIBLE",
+      "truth_solve_seconds": 0.665,
+      "truth_core": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "truth_core_has_base": false,
+      "truth_core_exact": true,
+      "truth_core_contains": true
+    },
+    {
+      "id": "case20",
+      "style": "noaz",
+      "team_size": 12,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.452,
+      "truth_violations": 0
+    },
+    {
+      "id": "case21",
+      "style": "mixed",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.198,
+      "truth_violations": 0
+    },
+    {
+      "id": "case22",
+      "style": "ru",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.073,
+      "truth_violations": 0
+    },
+    {
+      "id": "case23",
+      "style": "az",
+      "team_size": 14,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.139,
+      "truth_violations": 0
+    },
+    {
+      "id": "case24",
+      "style": "mixed",
+      "team_size": 10,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.101,
+      "truth_violations": 0
+    },
+    {
+      "id": "case25",
+      "style": "az",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.244,
+      "truth_violations": 0
+    },
+    {
+      "id": "case26",
+      "style": "az",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.122,
+      "truth_violations": 0
+    },
+    {
+      "id": "case27",
+      "style": "mixed",
+      "team_size": 13,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.209,
+      "truth_violations": 0
+    },
+    {
+      "id": "case28",
+      "style": "ru",
+      "team_size": 9,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.135,
+      "truth_violations": 0
+    },
+    {
+      "id": "case29",
+      "style": "az",
+      "team_size": 14,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "OPTIMAL",
+      "truth_solve_seconds": 0.162,
+      "truth_violations": 0
+    },
+    {
+      "id": "case30",
+      "style": "ru",
+      "team_size": 12,
+      "infeasible": false,
+      "paraphrased": false,
+      "truth_status": "FEASIBLE",
+      "truth_solve_seconds": 20.059,
+      "truth_violations": 0
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "case16",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Fərid",
+      "role": "senior"
+    },
+    {
+      "id": "p04",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Rəşad",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Resad 16.10-den 18.10-dek mezuniyyetdedir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p10",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-16",
+            "2026-10-18"
+          ],
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Hec kim heftede 40 saatdan cox islemesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 40
+        }
+      ]
+    },
+    {
+      "text": "Her seher novbesinde en azi 3 nefer olmalidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_staff",
+          "shift": "morning",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

@@ -1,0 +1,107 @@
+{
+  "id": "case24",
+  "style": "mixed",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Leyla",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Elnur",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Vüsal",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Gecə növbəsində минимум 1 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "text": "Heç kim həftədə 48 часов-dan çox işləməsin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "max_hours_week",
+          "person": "all",
+          "hours": 48
+        }
+      ]
+    },
+    {
+      "text": "Gecə növbəsində минимум 2 senior olsun.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "min_role",
+          "shift": "night",
+          "role": "senior",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "text": "Murad и Leyla eyni növbədə olmasın.",
+      "expected": "unsupported",
+      "constraints": []
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

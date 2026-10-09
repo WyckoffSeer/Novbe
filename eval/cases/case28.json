@@ -1,0 +1,105 @@
+{
+  "id": "case28",
+  "style": "ru",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Nigar",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Rəşad",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Sevinc",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Севиндж не может выходить в вечернюю смену по воскресеньям.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p09",
+          "weekdays": [
+            6
+          ],
+          "date_range": null,
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "В каждой утренней смене должно быть минимум 3 человека.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_staff",
+          "shift": "morning",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Лейла в отпуске с 13.10 по 16.10.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p04",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-13",
+            "2026-10-16"
+          ],
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

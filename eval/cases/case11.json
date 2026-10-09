@@ -1,0 +1,153 @@
+{
+  "id": "case11",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p02",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Aysel",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Səbinə",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p06",
+      "name": "Lalə",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Günel",
+      "role": "senior"
+    },
+    {
+      "id": "p10",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Tural",
+      "role": "senior"
+    },
+    {
+      "id": "p13",
+      "name": "Murad",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Gunel cume axsami gunleri seher novbesine cixa bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p09",
+          "weekdays": [
+            3
+          ],
+          "date_range": null,
+          "shift": "morning"
+        }
+      ]
+    },
+    {
+      "text": "Murad cersenbe axsami gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p13",
+          "weekdays": [
+            1
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Sebine 19 oktyabrda axsam novbesinde isleyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "fixed_assignment",
+          "person": "p04",
+          "date": "2026-10-19",
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Elnur 22 oktyabrda axsam novbesinde isleyir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "fixed_assignment",
+          "person": "p02",
+          "date": "2026-10-22",
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Murad senbe gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "unavailable",
+          "person": "p13",
+          "weekdays": [
+            5
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

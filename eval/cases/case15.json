@@ -1,0 +1,154 @@
+{
+  "id": "case15",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Aynur",
+      "role": "senior"
+    },
+    {
+      "id": "p03",
+      "name": "Tural",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Rəşad",
+      "role": "senior"
+    },
+    {
+      "id": "p05",
+      "name": "Aysel",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Kamran",
+      "role": "senior"
+    },
+    {
+      "id": "p07",
+      "name": "Səbinə",
+      "role": "junior"
+    },
+    {
+      "id": "p08",
+      "name": "Murad",
+      "role": "junior"
+    },
+    {
+      "id": "p09",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p11",
+      "name": "Orxan",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Vüsal",
+      "role": "junior"
+    },
+    {
+      "id": "p13",
+      "name": "Elnur",
+      "role": "senior"
+    },
+    {
+      "id": "p14",
+      "name": "Fərid",
+      "role": "senior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Murad 20.10-den 22.10-dek mezuniyyetdedir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "unavailable",
+          "person": "p08",
+          "weekdays": null,
+          "date_range": [
+            "2026-10-20",
+            "2026-10-22"
+          ],
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Her seher novbesinde en azi 3 nefer olmalidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "min_staff",
+          "shift": "morning",
+          "n": 3,
+          "weekdays": null
+        }
+      ]
+    },
+    {
+      "text": "Hec kim ardicil 6 gunden cox islemesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "max_consecutive_days",
+          "person": "all",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "text": "Orxan senbe gunleri axsam novbesine cixa bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "unavailable",
+          "person": "p11",
+          "weekdays": [
+            5
+          ],
+          "date_range": null,
+          "shift": "evening"
+        }
+      ]
+    },
+    {
+      "text": "Her kes heftede en cox 4 novbe islesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g5",
+          "type": "max_shifts_week",
+          "person": "all",
+          "n": 4
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}

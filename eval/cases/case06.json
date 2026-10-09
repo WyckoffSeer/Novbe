@@ -1,0 +1,135 @@
+{
+  "id": "case06",
+  "style": "noaz",
+  "start_date": "2026-10-12",
+  "weeks": 2,
+  "base_n": 2,
+  "staff": [
+    {
+      "id": "p01",
+      "name": "Nigar",
+      "role": "junior"
+    },
+    {
+      "id": "p02",
+      "name": "Günel",
+      "role": "junior"
+    },
+    {
+      "id": "p03",
+      "name": "Kamran",
+      "role": "junior"
+    },
+    {
+      "id": "p04",
+      "name": "Leyla",
+      "role": "junior"
+    },
+    {
+      "id": "p05",
+      "name": "Lalə",
+      "role": "senior"
+    },
+    {
+      "id": "p06",
+      "name": "Aynur",
+      "role": "junior"
+    },
+    {
+      "id": "p07",
+      "name": "Murad",
+      "role": "senior"
+    },
+    {
+      "id": "p08",
+      "name": "Vüsal",
+      "role": "senior"
+    },
+    {
+      "id": "p09",
+      "name": "Sevinc",
+      "role": "junior"
+    },
+    {
+      "id": "p10",
+      "name": "Orxan",
+      "role": "senior"
+    },
+    {
+      "id": "p11",
+      "name": "Fərid",
+      "role": "junior"
+    },
+    {
+      "id": "p12",
+      "name": "Elnur",
+      "role": "junior"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "Aynur heftede 3 novbeden cox islemesin.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g1",
+          "type": "max_shifts_week",
+          "person": "p06",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "text": "Gunel bazar gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g2",
+          "type": "unavailable",
+          "person": "p02",
+          "weekdays": [
+            6
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Murad seherleri islemeyi ustun tutur.",
+      "expected": "ambiguous",
+      "constraints": []
+    },
+    {
+      "text": "Gunel bazar ertesi gunleri isleye bilmez.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g3",
+          "type": "unavailable",
+          "person": "p02",
+          "weekdays": [
+            0
+          ],
+          "date_range": null,
+          "shift": null
+        }
+      ]
+    },
+    {
+      "text": "Lale ardicil 6 gunden cox islememelidir.",
+      "expected": "constraint",
+      "constraints": [
+        {
+          "id": "g4",
+          "type": "max_consecutive_days",
+          "person": "p05",
+          "n": 6
+        }
+      ]
+    }
+  ],
+  "infeasible": false,
+  "conflict_ids": [],
+  "paraphrased": false
+}
